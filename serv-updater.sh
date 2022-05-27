@@ -34,7 +34,7 @@ clear
 
 
 systemctl stop cron > /dev/null 2>&1
-curl -sS https://raw.githubusercontent.com/scvps/scriptvps/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/apih46/tuti/main/resources/ascii-home
 echo
 sleep 1
 date
