@@ -8,7 +8,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
 NC='\e[0m'
-curl -sS https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/apih46/tuti/main/resources/ascii-home
 echo "Shadowsocks-R"
 echo "Progress..."
 sleep 3
@@ -128,7 +128,7 @@ Service_SSR(){
 if [[ ${OS} = "centos" ]]; then
 echo "Not support centos"
 else
-wget -q --no-check-certificate https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/core/ssr-core.sh -O /etc/init.d/ssrmu
+wget -q --no-check-certificate https://raw.githubusercontent.com/apih46/tuti/main/core/ssr-core.sh -O /etc/init.d/ssrmu
 chmod +x /etc/init.d/ssrmu
 update-rc.d -f ssrmu defaults > /dev/null 2>&1
 fi
@@ -149,7 +149,7 @@ if [[ ${OS} == "centos" ]]; then
 }
 Start_SSR(){
 	check_pid
-	wget -q -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/core/ssr-core.sh"
+	wget -q -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/apih46/tuti/main/core/ssr-core.sh"
 	systemctl daemon-reload > /dev/null 2>&1
 	systemctl restart ssrmu > /dev/null 2>&1
 }
@@ -188,10 +188,10 @@ Start_SSR
 Install_SSR
 systemctl restart ssrmu > /dev/null 2>&1
 #wget -q -O /usr/bin/ssr raw.githubusercontent.com/ahmednajmudeen/tetbot/main/shadowsocks/ssrmu.sh && chmod +x /usr/bin/ssr
-wget -q -O /usr/bin/add-ssr https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/shadowsocks/add-ssr.sh && chmod +x /usr/bin/add-ssr
-wget -q -O /usr/bin/del-ssr https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/shadowsocks/del-ssr.sh && chmod +x /usr/bin/del-ssr
-wget -q -O /usr/bin/renew-ssr https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/shadowsocks/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
-wget -q -O /usr/bin/trial-ssr https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/shadowsocks/trial-ssr.sh && chmod +x /usr/bin/trial-ssr
+wget -q -O /usr/bin/add-ssr https://raw.githubusercontent.com/apih46/tuti/main/shadowsocks/add-ssr.sh && chmod +x /usr/bin/add-ssr
+wget -q -O /usr/bin/del-ssr https://raw.githubusercontent.com/apih46/tuti/main/shadowsocks/del-ssr.sh && chmod +x /usr/bin/del-ssr
+wget -q -O /usr/bin/renew-ssr https://raw.githubusercontent.com/apih46/tuti/main/shadowsocks/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
+wget -q -O /usr/bin/trial-ssr https://raw.githubusercontent.com/apih46/tuti/main/shadowsocks/trial-ssr.sh && chmod +x /usr/bin/trial-ssr
 touch /usr/local/shadowsocksr/akun.conf
 
 sleep 1

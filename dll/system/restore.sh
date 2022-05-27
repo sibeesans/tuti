@@ -12,7 +12,7 @@ PERMISSION
 
 cd
 MYIP=$(curl -sS ipv4.icanhazip.com)
-NameUser=$(curl -sS https://raw.githubusercontent.com/ahmednajmudeen/tetbot/main/skkkk | grep $MYIP | awk '{print $2}')
+NameUser=$(curl -sS https://raw.githubusercontent.com/apih46/tuti/main/skkkk | grep $MYIP | awk '{print $2}')
 
 cekdata=$(curl -sS https://raw.githubusercontent.com/ahmednajmudeen/user-backup-db/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
