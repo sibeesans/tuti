@@ -1206,27 +1206,10 @@ EOF
         OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
 
         local env_msg
-        env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>    🔸 TRIAL SSH ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
-        env_msg+="Host : $IPs \n"
+        env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>    🔸 LUKAVPN TRIAL 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
         env_msg+="Username: <code>$userna</code>\n"
         env_msg+="Password: 1\n"
         env_msg+="Expired On: $t_time $hrs ⏳\n"
-        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-        env_msg+="OpenSSH : $opensh\n"
-        env_msg+="Dropbear : $db\n"
-        env_msg+="SSH-WS : $portsshws\n"
-        env_msg+="SSH-WS-SSL : $wsssl\n"
-        env_msg+="SSL/TLS : $ssl\n"
-        env_msg+="Port Squid : $sqd\n"
-        env_msg+="OHP SSH : $OhpSSH\n"
-        env_msg+="OHP Dropbear : $OhpDB\n"
-        env_msg+="OHP OpenVPN : $OhpOVPN\n"
-        env_msg+="UDPGW : 7100-7300 \n"
-        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-        env_msg+="OpenVPN Config : http://$IPs:81/\n"
-        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-        env_msg+="Payload WS : \n\n"
-        env_msg+="<code>GET / HTTP/1.1[crlf]Host: $IPs [crlf]Upgrade: websocket[crlf][crlf]</code>\n"
         env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
 
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
@@ -7478,28 +7461,12 @@ OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '
 wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
 local env_msg
-env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>    🔸 SSH ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
-env_msg+="Host : $IPs \n"
+env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>    🔸 LUKAVPN PREMIUM ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
 env_msg+="Username: <code>$userna</code>\n"
 env_msg+="Password: <code>$passw</code>\n"
 env_msg+="Expired On: $data 📅\n"
 env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-env_msg+="OpenSSH : $opensh\n"
-env_msg+="Dropbear : $db\n"
-env_msg+="SSH-WS : $portsshws\n"
-env_msg+="SSH-WS-SSL : $wsssl\n"
-env_msg+="SSL/TLS : $ssl\n"
-env_msg+="OHP SSH : $OhpSSH\n"
-env_msg+="OHP Dropbear : $OhpDB\n"
-env_msg+="OHP OpenVPN : $OhpOVPN\n"
-env_msg+="Port Squid : $sqd\n"
-env_msg+="UDPGW : 7100-7900 \n"
-env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-env_msg+="OpenVPN Config : http://$IPs:81/\n"
-env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-env_msg+="Payload WS : \n\n"
-env_msg+="<code>GET / HTTP/1.1[crlf]Host: $IPs [crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]</code>\n"
-env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
+env_msg+="Thank You"
 ShellBot.sendMessage --chat_id ${callback_query_from_id[$id]} \
     --text "$env_msg" \
     --parse_mode html
@@ -7889,28 +7856,12 @@ while :; do
                         OhpOVPN=`cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}'`
                         wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
-                        env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 SSH ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="Host : $IPs \n"
+                        env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 LUKAVPN PREMIUM ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
                         env_msg+="Username: <code>$(awk -F " " '/Name/ {print $2}' $CAD_ARQ)</code>\n"
                         env_msg+="Password: <code>$(awk -F " " '/Password/ {print $2}' $CAD_ARQ)</code>\n"
                         env_msg+="Expired On: $(awk -F " " '/Validity/ {print $2}' $CAD_ARQ) 🗓\n"
                         env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="OpenSSH : $opensh\n"
-                        env_msg+="Dropbear : $db\n"
-                        env_msg+="SSH-WS : $portsshws\n"
-                        env_msg+="SSH-WS-SSL : $wsssl\n"
-                        env_msg+="SSL/TLS : $ssl\n"
-                        env_msg+="OHP SSH : $OhpSSH\n"
-                        env_msg+="OHP Dropbear : $OhpDB\n"
-                        env_msg+="OHP OpenVPN : $OhpOVPN\n"
-                        env_msg+="Port Squid : $sqd\n"
-                        env_msg+="UDPGW : 7100-7300 \n"
-                        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="OpenVPN Config : http://$IPs:81/\n"
-                        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="Payload WS : \n\n"
-                        env_msg+="<code>GET / HTTP/1.1[crlf]Host: $IPs [crlf]Upgrade: websocket[crlf][crlf]</code>\n"
-                        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
+                        env_msg+="Thank You"
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
                             --text "$env_msg" \
                             --parse_mode html
@@ -7946,28 +7897,12 @@ while :; do
                         wsssl=`cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}'`
 
                         local env_msg
-                        env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 SSH ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="Host : $IPs \n"
+                        env_msg="━━━━━━━━━━━━━━━━━━━━━\n<b>       🔸 LUKAVPN PREMIUM ACCOUNT 🔸 </b>\n━━━━━━━━━━━━━━━━━━━━━\n"
                         env_msg+="Username: <code>$(awk -F " " '/Name/ {print $2}' $CAD_ARQ)</code>\n"
                         env_msg+="Password: <code>$(awk -F " " '/Password/ {print $2}' $CAD_ARQ)</code>\n"
                         env_msg+="Expired On: $(awk -F " " '/Validity/ {print $2}' $CAD_ARQ) 🗓\n"
                         env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="OpenSSH : $opensh\n"
-                        env_msg+="Dropbear : $db\n"
-                        env_msg+="SSH-WS : $portsshws\n"
-                        env_msg+="SSH-WS-SSL : $wsssl\n"
-                        env_msg+="SSL/TLS : $ssl\n"
-                        env_msg+="OHP SSH : $OhpSSH\n"
-                        env_msg+="OHP Dropbear : $OhpDB\n"
-                        env_msg+="OHP OpenVPN : $OhpOVPN\n"
-                        env_msg+="Port Squid : $sqd\n"
-                        env_msg+="UDPGW : 7100-7900 \n"
-                        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="OpenVPN Config : http://$IPs:81/\n"
-                        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
-                        env_msg+="Payload WS : \n\n"
-                        env_msg+="<code>GET / HTTP/1.1[crlf]Host: $IPs [crlf]Upgrade: websocket[crlf][crlf]</code>\n"
-                        env_msg+="━━━━━━━━━━━━━━━━━━━━━\n"
+                        env_msg+="Thank You"
                         ShellBot.sendMessage --chat_id ${message_from_id[$id]} \
                             --text "$env_msg" \
                             --parse_mode html
